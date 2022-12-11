@@ -1,12 +1,35 @@
 import { useEffect, useState } from "react"
-import EachCountry from "./Components/EachCountry"
-import axios from 'axios'
+import AllCountries from "./Components/Allcountries"
+import DropDown from "./Components/DropDown"
+import FilterdCountries from "./Components/FilterdCountries"
+import SearchedCountries from "./Components/SearchedCountries"
 
 
 
 
 const Home = () => {
-    const [countries,setCountries] = useState([])
+    const [region,setRegion] = useState('All region')
+    const [searchName,setSearchName] = useState('')
+
+
+
+
+    
+    
+    
+    
+    const ShowCountries = () => {
+        if (region === 'All region' && !searchName){
+            return(<AllCountries />)
+        }
+        else if (searchName) {
+            return(<SearchedCountries name={searchName} />)
+        }
+        else if (region !== 'All region') {
+            return(<FilterdCountries region={region} />)
+        }
+    } 
+
 
 
     return(
@@ -19,19 +42,16 @@ const Home = () => {
                 </button>
             </div>
             <div className="w-full flex flex-col p-16">
-                <div className="flex justify-between items-center w-full ">
-                    <div className="grow flex h-12 justify-center items-center shadow-md bg-White rounded-md p-3 mr-6 max-w-xl">
+                <div className={`flex justify-between items-center w-full border-b-2 pb-6 `}>
+                    <div className={`${region !== 'All region' ? 'opacity-50':null} grow flex h-12 justify-center items-center shadow-md bg-White rounded-md p-3 mr-6 max-w-xl`}>
                         <span>🍳</span>
-                        <input className="text-DarkGray grow mx-3 h-12 focus:outline-0" placeholder="Search for the country ..." type="text" />
+                        <input onChange={(({target}) => {
+                            setSearchName(target.value)
+                        })} value={searchName} disabled={region !== 'All region'} className="text-DarkGray grow mx-3 h-12 focus:outline-0" placeholder="Search for the country ..." type="text" />
                     </div>
-                    <div className="shadow-md h-12 bg-White rounded-md p-3 w-40 flex justify-between items-center">
-                        <span>Filter by region</span>
-                        <span>🔽</span>
-                    </div>
+                    <DropDown disabled={searchName} setFunction={setRegion} />
                 </div>
-                <div className="mt-10 flex flex-wrap grow justify-between">
-                    
-                </div>
+                <ShowCountries />
             </div>
         </div>
     )

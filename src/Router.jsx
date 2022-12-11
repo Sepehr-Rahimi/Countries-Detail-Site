@@ -8,7 +8,7 @@ const Router = () => (
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/detail/:country' element={<Detail />} />
+            <Route path='/detail/:code' element={<Detail />} />
         </Routes>
     </BrowserRouter>
 )
