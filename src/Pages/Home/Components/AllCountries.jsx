@@ -9,18 +9,14 @@ const AllCountries = () => {
 
 
     const [countries,isLoading,isError] = useCountries()
-    console.log(isLoading)
-    console.log(isError)
-
-
     if (isError) {
         return(
-            <div className="w-full text-center border-2 border-DarkBlue rounded-md">Not Found</div>
+            <div className="w-full mt-6 text-center border-2 border-DarkBlue rounded-md">Not Found</div>
         )
     }
     else if (isLoading) {
         return(
-            <div className="w-full text-center border-2 border-DarkBlue rounded-md">Loading ...</div>
+            <div className="w-full mt-6 text-center border-2 border-DarkBlue rounded-md">Loading ...</div>
         )
     }
     else {

@@ -10,8 +10,8 @@ const EachCountry = ({flagUrl,name,population,region,capital,alpha3Code}) => {
 
 
     return(
-        <span onClick={() => {navigate(detailLink)}} className="cursor-pointer flex flex-col max-w-xs rounded-lg shadow-md mb-20 mx-auto w-80 h-96">
-            <img  className="w-full h-44 rounded-t-md" src={flagUrl} alt={name} />
+        <span onClick={() => {navigate(detailLink)}} className="cursor-pointer flex flex-col max-w-xs rounded-lg shadow-md mb-20 mx-auto w-80 h-96 dark:shadow-White">
+            <img  className="w-full h-44 rounded-t-lg" src={flagUrl} alt={name} />
             <div className="flex flex-col px-6">
                 <div className="font-bold mt-6 text-xl">{name}</div>
                 <div className="mt-6 mb-10">
