@@ -28,7 +28,6 @@ const ThemeToggleButton = () => {
         } else {
           document.documentElement.classList.remove('dark')
         }
-        console.log('miad')
       },[theme])
 
 
@@ -45,24 +44,24 @@ const ThemeToggleButton = () => {
         }
     }
 
-    if (theme === 'light'){
+    // if (theme === 'light'){
+    //     return(
+    //         <button onClick={toggleTheme} className="mx-4 flex justify-center items-center">
+                
+    //             <span>Dark mode</span>
+    //         </button>
+    
+    //     )
+    // }
+    // if (theme === 'dark'){
+        
         return(
             <button onClick={toggleTheme} className="mx-4 flex justify-center items-center">
-                <img className="w-10 h-10 mr-3" src={moon} alt="dark mode" />
-                <span>Dark mode</span>
+                {theme === 'dark' ? <div className="flex items-center"><img className="w-10 h-10 mr-3" src={sun} alt="light mode" /><span>Dark mode</span></div> : <div className="flex items-center"><img className="w-10 h-10 mr-3" src={moon} alt="dark mode" /><span>Dark mode</span></div> }    
             </button>
     
         )
-    }
-    if (theme === 'dark'){
-        return(
-            <button onClick={toggleTheme} className="mx-4 flex justify-center items-center">
-                <img className="w-10 h-10 mr-3" src={sun} alt="light mode" />
-                <span>Light mode</span>
-            </button>
-    
-        )
-    }
+    // }
 }
 
 export default ThemeToggleButton
