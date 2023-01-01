@@ -1,7 +1,7 @@
 # REST-Countries-API
 
 
-The project is vite
+The project is on vite
 
 
 go to project directory and run this code : 
