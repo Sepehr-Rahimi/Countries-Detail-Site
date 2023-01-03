@@ -13,7 +13,6 @@ const AllCountries = () => {
     const isLoading = false 
     const isError = false
     const countries = allCountries()
-    console.log(countries)
 
 
     if (isError) {
