@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import ThemeToggleButton from "../Common/ThemeToggleButton"
 import AllCountries from "./Components/Allcountries"
 import DropDown from "./Components/DropDown"

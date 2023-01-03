@@ -1,5 +1,6 @@
 import EachCountry from "./EachCountry"
 import useFilterdCountries from "../Hooks/useFilterdCountries"
+import EachCountrySkleton from "./EachCountrySkleton"
 
 const FilterdCountries = ({region}) => {
 
@@ -16,7 +17,7 @@ const FilterdCountries = ({region}) => {
     }
     else if (isLoading) {
         return(
-            <div className="w-full text-center mt-6 border-2 border-DarkBlue rounded-md">Loading ...</div>
+            <EachCountrySkleton/>
         )
     }
     else {

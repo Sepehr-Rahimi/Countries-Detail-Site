@@ -1,6 +1,7 @@
 import EachCountry from "./EachCountry"
 import useSearchedCountries from "../Hooks/useSearchedCountries"
 import Skeleton from 'react-loading-skeleton'
+import EachCountrySkleton from "./EachCountrySkleton"
 const SearchedCountries = ({name}) => {
 
 
@@ -14,9 +15,7 @@ const SearchedCountries = ({name}) => {
     }
     else if (isLoading) {
         return(
-            <div className="w-full text-center mt-6 border-2 border-DarkBlue rounded-md">
-                Loading...
-            </div>
+            <EachCountrySkleton/>
         )
     }
     else {

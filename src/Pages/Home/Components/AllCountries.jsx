@@ -1,6 +1,7 @@
 import EachCountry from "./EachCountry"
 import useCountries from './../Hooks/useCountries'
-import Skeleton from 'react-loading-skeleton'
+import allCountries from "../../../Constants/allCountries"
+import EachCountrySkleton from "./EachCountrySkleton"
 
 
 
@@ -8,7 +9,13 @@ import Skeleton from 'react-loading-skeleton'
 const AllCountries = () => {
 
 
-    const [countries,isLoading,isError] = useCountries()
+    // const [countries,isLoading,isError] = useCountries()
+    const isLoading = false 
+    const isError = false
+    const countries = allCountries()
+    console.log(countries)
+
+
     if (isError) {
         return(
             <div className="w-full mt-6 text-center border-2 border-DarkBlue rounded-md">Not Found</div>
@@ -16,7 +23,7 @@ const AllCountries = () => {
     }
     else if (isLoading) {
         return(
-            <div className="w-full mt-6 text-center border-2 border-DarkBlue rounded-md">Loading ...</div>
+            <EachCountrySkleton/>
         )
     }
     else {
