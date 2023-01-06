@@ -12,14 +12,17 @@ const CountryDetail = () => {
 
 
 
-    if (isLoading) (
-        <CountryDetailSkeleton/>
-    )
-    if (isError) (
+    if (isLoading) {
+        return(
+            <CountryDetailSkeleton/>
+        )
+    }
+    
+    if (isError) {
         <div>
             Something went Wrong !
         </div>
-    )
+    }
     if (!isLoading && !isError && country) {
         
         return(
@@ -27,7 +30,7 @@ const CountryDetail = () => {
 
                 <div className="flex flex-wrap justify-between items-center">
                     <img className="w-4/5 max-w-xl rounded-md mx-auto" src={flag} alt={nativeName} />
-                    <div className="flex flex-col">
+                    <div className="flex flex-col mx-auto">
                         <div className="p-4 font-bold text-xl border-b-2 border-DarkBlue">{name}</div>
                         <div className="flex flex-wrap max-w-xl ">
                             <div className="w-1/2 p-4">

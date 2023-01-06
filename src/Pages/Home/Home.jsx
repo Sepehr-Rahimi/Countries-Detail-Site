@@ -4,7 +4,7 @@ import AllCountries from "./Components/Allcountries"
 import DropDown from "./Components/DropDown"
 import FilterdCountries from "./Components/FilterdCountries"
 import SearchedCountries from "./Components/SearchedCountries"
-
+import { BiSearchAlt } from 'react-icons/bi'
 
 
 
@@ -40,9 +40,9 @@ const Home = () => {
                 <ThemeToggleButton />
             </div>
             <div className="w-full flex flex-col p-16">
-                <div className={`flex justify-between items-center w-full border-b-2 pb-6 `}>
-                    <div className={`${region !== 'All region' ? 'opacity-50':null} grow dark:bg-DarkBlue flex h-12 justify-center items-center shadow-md bg-White rounded-md p-3 mr-6 max-w-xl`}>
-                        <span>🍳</span>
+                <div className={`flex flex-wrap justify-between items-center w-full border-b-2 pb-6 `}>
+                    <div className={`${region !== 'All region' ? 'opacity-50':null} grow dark:bg-DarkBlue flex h-12 justify-center items-center shadow-md bg-White rounded-md p-3 my-3 mr-6 max-w-xl`}>
+                        <span><BiSearchAlt/></span>
                         <input onChange={(({target}) => {
                             setSearchName(target.value)
                         })} value={searchName} disabled={region !== 'All region'} className="text-DarkGray bg-inherit grow mx-3 h-12 focus:outline-0" placeholder="Search for the country ..." type="text" />

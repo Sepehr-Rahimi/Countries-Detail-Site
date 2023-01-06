@@ -1,6 +1,7 @@
 import CountryDetail from "./Components/CountryDetail"
 import {useNavigate} from 'react-router-dom'
 import ThemeToggleButton from "../Common/ThemeToggleButton"
+import {AiOutlineRollback} from 'react-icons/ai'
 
 const Detail = () => {
 
@@ -13,7 +14,14 @@ const Detail = () => {
                 <ThemeToggleButton />
             </div>
             <div className="w-11/12 mx-auto flex flex-col my-10">
-                <button className="hover:scale-95 rounded-md text-center w-20 h-8 bg-White dark:bg-DarkBlue  mb-8 border-2 border-DarkBlue" onClick={() => {navigate(-1)}}>Back</button>
+                <button className="flex items-center justify-between px-3 hover:scale-95 rounded-md text-center w-20 h-8 bg-White dark:bg-DarkBlue  mb-8 border-2 border-DarkBlue" onClick={() => {navigate(-1)}}>
+                    <span>
+                        Back
+                    </span>
+                    <span>
+                        <AiOutlineRollback/>
+                    </span>
+                </button>
                 <CountryDetail/>
             </div>
         </div>
